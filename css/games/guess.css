@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(238, 130, 238, 0.5);
+    /* border-style:solid; */
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    box-sizing: inherit;
+    background-color: rgba(238, 130, 238, 0.5);
+    /* border-style: double; */
+    width: 150vw;
+    height: 95vh;
+    display: grid;
+    grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    grid-template-rows: 0.1fr 0.1fr 0.3fr 0.4fr 0.1fr;
+    grid-template-areas: "top-header top-header top-header top-header top-header top-header top-header top-header top-header top-header"
+                         "top-left top-left top-left top-left top-left top-right top-right top-right top-right top-right"
+                         "middle-display middle-display middle-display middle-display middle-display middle-display middle-display middle-display aside-display aside-display"
+                         "bottom-left bottom-left bottom-left bottom-left bottom-right bottom-right bottom-right bottom-right aside-display aside-display"
+                         "footer footer footer footer footer footer footer footer footer footer";
+}
+
+#game-name {
+    font-weight: bolder;
+    font-size: 2em;
+}
+
+.header-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: top-header;
+    background-color: rgb(240, 37, 240);
+    grid-column: 1/11;
+    grid-row: 1/2;
+    text-align: center;
+
+}
+
+.top-left-class {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+
+    grid-area: top-left;
+    background-color: rgb(240, 37, 240);
+    /*grid-column: 1/2;
+    grid-row: 1/2; */
+    text-align: left;
+}
+
+.top-right-class {
+    display: flex;
+    align-items: right;
+    justify-content: flex-end;
+
+    grid-area: top-right;
+    background-color: rgb(240, 37, 240);
+    /* grid-column: 2/3;
+    grid-row: 1/2; */
+    text-align: right;
+}
+
+.aside-display-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    grid-area: aside-display;
+    background-color: rgb(238, 130, 238);
+    /* grid-column: 2/3;
+    grid-row: 1/2; */
+    text-align: center;
+}
+
+.guessing-display-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    grid-area: middle-display;
+    background-color: rgb(238, 130, 238);
+    /* grid-column: 1/3;
+    font-weight: bolder;
+    grid-row: 2/3; */
+    text-align: center;
+    align-content: center;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.scroll-display-number {
+    background-color: rgb(238, 130, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    grid-area: middle-display;
+    font-weight: bolder;
+
+   /* grid-column: 1/3;
+    grid-row: 2/3;*/
+    text-align: center;
+    align-content: center;
+    font-size: 3em;
+    font-weight: normal;
+    border: 0;
+}
+
+.guessing-input-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    grid-area: bottom-left;
+    background-color: rgba(238, 130, 238, 1);
+    /* grid-column: 1/2;
+    grid-row: 3/4; */
+    /* background-position: bottom; */
+    text-align: center;
+    align-content: center;
+}
+
+.guessing-result-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: bottom-right;
+    background-color: rgba(238, 130, 238, 1);
+    /* grid-column: 2/3;
+    grid-row: 3/4; */
+    text-align: center;
+    align-content: center;
+    font-size: 1em;
+    font-weight: normal;
+}
+
+.footer-class {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: footer;
+    background-color: rgb(240, 37, 240);
+    /* grid-column: 2/3;
+    grid-row: 3/4; */
+    text-align: center;
+    align-content: center;
+
+}
+
+.message {
+    font-size: 1em;
+    padding: 1em;
+    font-weight: bold;
+}
+
+.myscore {
+    font-weight: bold;
+    color: red;
+}
+
+.modal-header {
+    background-color: rgba(238, 130, 238, 1);
+}
+
+.modal-body {
+    background-color: rgba(238, 130, 238, 0.5);
+}
+
+.modal-footer {
+    background-color: rgba(238, 130, 238, 1);
+}
+.understood-btn-class {
+    background-color:grey;
+}

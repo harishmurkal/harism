@@ -22,7 +22,7 @@
     <div class="container">
 
         <div class="header-class">
-            <p id=game-name>GUESS the number</p>
+            <p id=game-name>GUESS</p>
         </div>
 
         <div class="top-left-class">
@@ -33,13 +33,9 @@
         </div>
 
         <div class="top-right-class">
-            <!-- <div class="form-group">
-                <h4>(Between 1 and 20)</h4>
-            </div> -->
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                 GAME RULES
             </button>
-
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                 aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
@@ -48,7 +44,7 @@
                             <h5 class="modal-title" id="staticBackdropLabel">Guess the Number!</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body game-rule-class">
                             <ol>
                                 <li>Input the Number only between 1 and 20</li>
                                 <li>Check!</li>
@@ -69,10 +65,9 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
-        <div class="guessing-display-class">
+        <!--<div class="guessing-display-class">
             <div class="form-group">
                 <h4>Your Guessed Number</h4>
                 <div class="d-grid gap-2 col-6 mx-auto">
@@ -80,20 +75,17 @@
                         disabled>---</button>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <div class="guessing-input-class">
             <div class="form-group">
                 <label for="guess-id"></label>
-                <!--
-                <input type="number" name="guess-number" id="guess-id">
-                <small id="guesshelp_id" class="form-text text-mutated">enter number here</small>
-                -->
                 <button type="button" class="scroll-display-number" class="btn btn-lg btn-info"
-                disabled>11</button>
+                disabled>---</button>
          
                 <input type="range" class="form-range" min="1" max="20" step="1" id="guess-id">
-                <small id="guesshelp_id" class="form-text text-mutated">Scroll above to select a number</small>
+                <br>
+                <small id="guesshelp_id" class="form-text text-mutated">Scroll and select</small>
 
                 <label for="check-id"></label>
                 <input type="button" class="btn btn-primary btn-lg" value="Check!" id="check-id">
@@ -101,24 +93,51 @@
         </div>
 
         <div class="aside-display-class">
-            <p>History</p>
+            <ul class="list-group overflow-auto">
+                <h4>History</h4>
+                <li class="list-group-item disabled"><div class="history-class history-0"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-1"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-2"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-3"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-4"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-5"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-6"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-7"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-8"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-9"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-10"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-11"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-12"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-13"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-14"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-15"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-16"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-17"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-18"></div></li>
+                <li class="list-group-item disabled"><div class="history-class history-19"></div></li>
+              </ul>
         </div>
 
-        <div class="guessing-result-class">
+        <div class="guessing-message-class">
             <div class="form-group">
                 <div class="message">
                     <p>💌💌 Not received any number.</p>
                 </div>
+            </div>
+        </div>
+
+        <div class="guessing-result-class">
+            <div class="form-group">
                 <div class="myscore">
                     <p>💯 Score: <span class="myscore-val">20</span></p>
                 </div>
 
                 <!-- START HIGHSCORE -->
                 <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalHsId">
-                <div class="myhighscore">
-                    <p> 🥇 Highscore: <span class="myhighscore-val">0</span></p>
-                </div>
-            </button>
+                    <div class="myhighscore">
+                        <p> 🥇 Highscore: <span class="myhighscore-val">0</span></p>
+                    </div>
+                </button>
     
                 <div class="modal fade" id="modalHsId" tabindex="-1" aria-labelledby="modalHsIdLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
@@ -128,7 +147,41 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <p>Your highest score so far is <span class="myhighscore-val">0</span></p>
+                                <h4>Your highest score so far is <span class="myhighscore-val">0</span></h4>
+                                <div class="hshistory-class">
+                                    <ul class="list-group overflow-auto">
+                                        <h6>Last game scores below:</h6>
+                                        <div id="hshistory-id-list">
+                                        <!--
+                                        <li class="list-group-item disabled"><div class="history-class history-0">1</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-1">2</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-2">3</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-3">4</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-4">5</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-5">6</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-6">7</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-7">8</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-8">9</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-9">10</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-10">11</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-11">12</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-12">13</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-13">14</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-14">15</div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-15"></div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-16"></div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-17"></div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-18"></div></li>
+                                        <li class="list-group-item disabled"><div class="history-class history-19"></div></li>
+                                        -->
+
+                                        </div>
+                                      </ul>
+
+                                    <button type="button" class="btn btn-info clear-btn-class"
+                                    data-bs-dismiss="modal">Clear-All</button>
+                                </div>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-info understood-btn-class"
@@ -138,10 +191,6 @@
                     </div>
                 </div>    
 
-                <!-- END -->
-                <!-- <div class="myhighscore">
-                    <p> 🥇 Highscore: <span class="myhighscore-val">0</span></p>
-                </div> -->
             </div>
         </div>
 

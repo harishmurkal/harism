@@ -5,8 +5,8 @@ document.querySelector('.message').textContent = '✔✔ You Guessed it!';
 console.log(document.querySelector('.message').textContent);
 //document.querySelector('message').textContent = '✔✔ Done';
 
-document.querySelector('.guessing-display-number').textContent = 13;
-console.log(document.querySelector('.guessing-display-number').textContent);
+document.querySelector('.scroll-display-number').textContent = 13;
+console.log(document.querySelector('.scroll-display-number').textContent);
 
 document.querySelector('#guess-id').value = 16;
 console.log(document.querySelector('#guess-id').value);
@@ -28,13 +28,14 @@ function playAgain() {
     secretNumber = Math.trunc(Math.random()*20) + 1;
     document.querySelector('.message').textContent = '💌💌 Not received any number.';
     document.querySelector('.guessing-result-class').style.backgroundColor = '#EE82EE';
-    document.querySelector('.guessing-display-number').style.backgroundColor = '#EE82EE';
-    document.querySelector('.guessing-display-number').style.fontSize = '1em';
-    document.querySelector('.guessing-display-number').style.fontWeight = 'normal';
+    document.querySelector('.scroll-display-number').style.backgroundColor = '#EE82EE';
+    document.querySelector('.scroll-display-number').style.fontSize = '6em';
+    document.querySelector('.scroll-display-number').style.fontWeight = 'normal';
     document.getElementById('check-id').disabled = false;
     document.getElementById('guess-id').disabled = false;
-    document.querySelector('.guessing-display-number').textContent = '---';
+    document.querySelector('.scroll-display-number').textContent = '---';
     document.querySelector('#guess-id').value = '';
+    clearHistory();
 }
 
 // Function to display SUCCESS and FAILURE patterns
@@ -42,14 +43,14 @@ function displayPattern(resultValue) {
     if (resultValue === "success") {
         document.querySelector('.message').textContent = '💪💪 BOOM! You guessed!';
         //document.querySelector('.guessing-result-class').style.backgroundColor = '#60b347';
-        document.querySelector('.guessing-display-number').style.backgroundColor = '#60b347';
+        document.querySelector('.scroll-display-number').style.backgroundColor = '#60b347';
     } else {    //failure case
         document.querySelector('.message').textContent = '😢😢Lost the game. Try Again!';
         //document.querySelector('.guessing-result-class').style.backgroundColor = '#ff4047';
-        document.querySelector('.guessing-display-number').style.backgroundColor = '#ff4047';
+        document.querySelector('.scroll-display-number').style.backgroundColor = '#ff4047';
     }
-    document.querySelector('.guessing-display-number').style.fontSize = '3em';
-    document.querySelector('.guessing-display-number').style.fontWeight = 'bolder';
+    document.querySelector('.scroll-display-number').style.fontSize = '7em';
+    document.querySelector('.scroll-display-number').style.fontWeight = 'bolder';
     document.getElementById('check-id').disabled = true;
     document.getElementById('guess-id').disabled = true;
 }
@@ -59,11 +60,56 @@ function displayScrollValue (scrollVal) {
     document.querySelector('.scroll-display-number').textContent = scrollVal;
 }
 
+let histGuessNumbers = [];
+
+let histHighScores = [];
+
+function clearHistory() {
+    histGuessNumbers = [];
+    let clearIndex;
+    for (clearIndex = 20; clearIndex > 0; clearIndex--) {
+        let historyElem = `.history-${clearIndex-1}`;
+        document.querySelector(historyElem).textContent = '';
+    }
+}
+
+function clearHistHighScores() {
+    histHighScores = [];
+}
+
+function updateHistoryHighScores(hsValue) {
+    const histHighScoreLen = histHighScores.push(hsValue);
+}
+
+function updateHistory(currentValue) {
+    const histLen = histGuessNumbers.push(currentValue);
+    let i;
+    for (i = histLen; i > 0; i--) {
+        let historyElem = `.history-${histLen-i}`;
+        let histSize = 3 - (0.1*(histLen-i));
+        let histSizeEm = `${histSize}em`;
+        //console.log(histSizeEm);
+        //console.log(historyElem);
+        document.querySelector(historyElem).textContent = histGuessNumbers[i-1];
+        document.querySelector(historyElem).style.fontSize=histSizeEm;
+    } 
+    
+    //let history = score - 1;
+    //let historyElem = `.history-${history}`;
+    //console.log(historyElem);
+    //document.querySelector(historyElem).textContent = currentValue;
+    //document.querySelector(historyElem).classList.add(historyElem);
+    //let histSize = 3 - (0.1*score);
+    //let histSizeEm = `${histSize}em`;
+    //console.log(histSizeEm);
+    //document.querySelector(historyElem).style.fontSize=histSizeEm;
+}
+
 // Logic for guess-id logic start
 function displayResult (inputVal) {
-    document.querySelector('.guessing-display-number').textContent = '---';
+    document.querySelector('.scroll-display-number').textContent = '---';
     document.querySelector('.myhighscore-val').textContent = highScore;
-    
+    updateHistory(inputVal);
     if (!inputVal) {
         if (0 === inputVal) {
             document.querySelector('.message').textContent = '❌ Zero is not a valid number';
@@ -75,8 +121,9 @@ function displayResult (inputVal) {
     } else if (20 < inputVal) {
         document.querySelector('.message').textContent = '❌ Enter number less than equal to 20';
     } else {
-        document.querySelector('.guessing-display-number').textContent = inputVal;
+        document.querySelector('.scroll-display-number').textContent = inputVal;
         if (secretNumber === inputVal) {
+            updateHistoryHighScores(score);
             if (score > highScore) {
                 highScore = score;
                 let allOccuranceHsElement = document.querySelectorAll('.myhighscore-val');
@@ -104,7 +151,7 @@ function displayResult (inputVal) {
 
 const handleClick = function() {
     const inputVal = Number(document.querySelector('#guess-id').value);
-    console.log(inputVal);
+    //console.log(inputVal);
     displayResult(inputVal);
 }
 
@@ -117,6 +164,7 @@ const handleScrollClick = function() {
 document.querySelector('#again-id').addEventListener('click', playAgain);
 document.querySelector('#check-id').addEventListener('click', handleClick);
 document.querySelector('#guess-id').addEventListener('click', handleScrollClick);
+document.querySelector('#guess-id').addEventListener('touchmove', handleScrollClick);
 document.querySelector('#guess-id').addEventListener('dblclick', handleClick);
 
 // Logic for input by pressing "Enter" key

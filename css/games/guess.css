@@ -21,8 +21,8 @@ body{
     grid-template-rows: 0.1fr 0.1fr 0.3fr 0.4fr 0.1fr;
     grid-template-areas: "top-header top-header top-header top-header top-header top-header top-header top-header top-header top-header"
                          "top-left top-left top-left top-left top-left top-right top-right top-right top-right top-right"
-                         "middle-display middle-display middle-display middle-display middle-display middle-display middle-display middle-display aside-display aside-display"
-                         "bottom-left bottom-left bottom-left bottom-left bottom-right bottom-right bottom-right bottom-right aside-display aside-display"
+                         "guessing-input guessing-input guessing-input guessing-input guessing-input guessing-input guessing-input guessing-input aside-display aside-display"
+                         "guessing-message guessing-message guessing-message guessing-message bottom-right bottom-right bottom-right bottom-right aside-display aside-display"
                          "footer footer footer footer footer footer footer footer footer footer";
 }
 
@@ -68,6 +68,14 @@ body{
     text-align: right;
 }
 
+.game-rule-class {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgb(240, 37, 240);
+    text-align: left;
+}
+
 .aside-display-class {
     display: flex;
     align-items: center;
@@ -78,6 +86,30 @@ body{
     /* grid-column: 2/3;
     grid-row: 1/2; */
     text-align: center;
+    overflow-y: scroll;
+    max-height: inherit;
+
+}
+
+.list-group {
+    display: inherit;
+    max-height: 40vh;
+
+}
+
+.list-group-item {
+padding: 0px;
+border: 0px;
+}
+
+.history-class {
+    background-color: rgba(238, 130, 238, 1);
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-spacing: 0;
+    
 }
 
 .guessing-display-class {
@@ -92,7 +124,7 @@ body{
     grid-row: 2/3; */
     text-align: center;
     align-content: center;
-    font-size: 2em;
+    font-size: 6em;
     font-weight: normal;
 }
 
@@ -109,9 +141,23 @@ body{
     grid-row: 2/3;*/
     text-align: center;
     align-content: center;
-    font-size: 3em;
+    font-size: 6em;
     font-weight: normal;
     border: 0;
+}
+
+.guessing-message-class{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-area: guessing-message;
+    background-color: rgba(238, 130, 238, 1);
+    /* grid-column: 2/3;
+    grid-row: 3/4; */
+    text-align: center;
+    align-content: center;
+    font-size: 2em;
+    font-weight: normal;
 }
 
 .guessing-input-class {
@@ -119,7 +165,7 @@ body{
     align-items: center;
     justify-content: center;
 
-    grid-area: bottom-left;
+    grid-area: guessing-input;
     background-color: rgba(238, 130, 238, 1);
     /* grid-column: 1/2;
     grid-row: 3/4; */
@@ -152,7 +198,6 @@ body{
     grid-row: 3/4; */
     text-align: center;
     align-content: center;
-
 }
 
 .message {
@@ -177,6 +222,16 @@ body{
 .modal-footer {
     background-color: rgba(238, 130, 238, 1);
 }
+
 .understood-btn-class {
     background-color:grey;
+}
+
+.clear-btn-class {
+    background-color: red;
+}
+
+#guess-id{
+    flex-wrap: wrap;
+    width: 50vw;
 }

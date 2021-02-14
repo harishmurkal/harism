@@ -23,6 +23,7 @@
 
         <div class="header-class">
             <p id=game-name>GUESS</p>
+            <p>(a number between 1 to 20)</p>
         </div>
 
         <div class="top-left-class">
@@ -133,7 +134,7 @@
                 </div>
 
                 <!-- START HIGHSCORE -->
-                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#modalHsId">
+                <button type="button" class="btn btn-primary btn-sm" id="hs-history-id" data-bs-toggle="modal" data-bs-target="#modalHsId">
                     <div class="myhighscore">
                         <p> 🥇 Highscore: <span class="myhighscore-val">0</span></p>
                     </div>
@@ -152,33 +153,11 @@
                                     <ul class="list-group overflow-auto">
                                         <h6>Last game scores below:</h6>
                                         <div id="hshistory-id-list">
-                                        <!--
-                                        <li class="list-group-item disabled"><div class="history-class history-0">1</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-1">2</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-2">3</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-3">4</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-4">5</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-5">6</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-6">7</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-7">8</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-8">9</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-9">10</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-10">11</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-11">12</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-12">13</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-13">14</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-14">15</div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-15"></div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-16"></div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-17"></div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-18"></div></li>
-                                        <li class="list-group-item disabled"><div class="history-class history-19"></div></li>
-                                        -->
 
                                         </div>
                                       </ul>
 
-                                    <button type="button" class="btn btn-info clear-btn-class"
+                                    <button type="button" id="clear-allhs-id" class="btn btn-info clear-btn-class"
                                     data-bs-dismiss="modal">Clear-All</button>
                                 </div>
 

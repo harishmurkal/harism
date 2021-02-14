@@ -64,6 +64,45 @@ let histGuessNumbers = [];
 
 let histHighScores = [];
 
+const fillHighScores = function() {
+    //document.getElementById("hshistory-id-list").appendChild("<h2>HM working<h2>");
+    document.getElementById("hshistory-id-list").innerHTML="";
+    const hsLen = histHighScores.length;
+    //for (const hs of histHighScores) {
+    let i;
+    for (i = hsLen; i > 0; i--) {
+        let playPrefix;
+        if (i === 1) {
+            playPrefix = `${i}st`;    //1st
+        } else if (i === 2) {
+            playPrefix = `${i}nd`;    //2nd
+        } else if (i === 3) {
+            playPrefix = `${i}rd`;    //3rd
+        } else {
+            playPrefix = `${i}th`;    //4th to 20th
+        }
+        let hsHtml = `<li class="list-group-item disabled"><div class="history-class history-0"> Your ${playPrefix} play --> ` + histHighScores[i-1] + `</div></li>`
+        document.getElementById("hshistory-id-list").innerHTML+= hsHtml;
+    }
+}
+
+function clearHistHighScores() {
+    histHighScores = [];
+    document.getElementById("hshistory-id-list").innerHTML = "";
+    highScore=0;
+    let allOccuranceHsElement = document.querySelectorAll('.myhighscore-val');
+    for (let i=0; i<allOccuranceHsElement.length ; i++) {
+        allOccuranceHsElement[i].textContent = highScore;
+    }
+}
+
+function updateHistoryHighScores(hsValue) {
+    if (histHighScores.length >= 20) {
+        clearHistHighScores();
+    } 
+    const histHighScoreLen = histHighScores.push(hsValue);
+}
+
 function clearHistory() {
     histGuessNumbers = [];
     let clearIndex;
@@ -71,14 +110,6 @@ function clearHistory() {
         let historyElem = `.history-${clearIndex-1}`;
         document.querySelector(historyElem).textContent = '';
     }
-}
-
-function clearHistHighScores() {
-    histHighScores = [];
-}
-
-function updateHistoryHighScores(hsValue) {
-    const histHighScoreLen = histHighScores.push(hsValue);
 }
 
 function updateHistory(currentValue) {
@@ -136,6 +167,7 @@ function displayResult (inputVal) {
         } else {
             score--;
             if (0 >= score) {
+                updateHistoryHighScores(0);
                 displayPattern("failure");    
             } else {
                 if (secretNumber > inputVal) {
@@ -166,6 +198,8 @@ document.querySelector('#check-id').addEventListener('click', handleClick);
 document.querySelector('#guess-id').addEventListener('click', handleScrollClick);
 document.querySelector('#guess-id').addEventListener('touchmove', handleScrollClick);
 document.querySelector('#guess-id').addEventListener('dblclick', handleClick);
+document.querySelector('#hs-history-id').addEventListener('click', fillHighScores);
+document.querySelector('#clear-allhs-id').addEventListener('click', clearHistHighScores);
 
 // Logic for input by pressing "Enter" key
 document.addEventListener('keydown', function(e) {

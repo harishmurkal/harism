@@ -112,40 +112,6 @@ border: 0px;
     
 }
 
-.guessing-display-class {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    grid-area: middle-display;
-    background-color: rgb(238, 130, 238);
-    /* grid-column: 1/3;
-    font-weight: bolder;
-    grid-row: 2/3; */
-    text-align: center;
-    align-content: center;
-    font-size: 6em;
-    font-weight: normal;
-}
-
-.scroll-display-number {
-    background-color: rgb(238, 130, 238);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    grid-area: middle-display;
-    font-weight: bolder;
-
-   /* grid-column: 1/3;
-    grid-row: 2/3;*/
-    text-align: center;
-    align-content: center;
-    font-size: 6em;
-    font-weight: normal;
-    border: 0;
-}
-
 .guessing-message-class{
     display: flex;
     align-items: center;
@@ -172,6 +138,24 @@ border: 0px;
     /* background-position: bottom; */
     text-align: center;
     align-content: center;
+}
+
+.scroll-display-number {
+    background-color: rgb(238, 130, 238);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    grid-area: guessing-input;
+    font-weight: bolder;
+
+   /* grid-column: 1/3;
+    grid-row: 2/3;*/
+    text-align: center;
+    align-content: center;
+    font-size: 6em;
+    font-weight: normal;
+    border: 0;
 }
 
 .guessing-result-class {
@@ -233,5 +217,5 @@ border: 0px;
 
 #guess-id{
     flex-wrap: wrap;
-    width: 50vw;
+    width: 70vw;
 }

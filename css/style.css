@@ -1,0 +1,55 @@
+* {
+    box-sizing: border-box;
+}
+
+.header-class {
+    color: black;
+    text-align: center;
+    font-size: 3em;
+}
+.header-class:hover {
+    opacity: 0.7;
+    background-color: whitesmoke;
+    font-weight: bolder;
+}
+
+.body-class {
+    display: flex;
+}
+
+.main-class {
+    display: flex;
+}
+.summary-class {
+    padding-top: 56px;
+}
+
+.page-content-class {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow-y: scroll;
+}
+
+.fixed-top-2 {
+    margin-top: 100px;
+}
+
+.aside-class {
+    display: flex;
+    text-align: center;
+}
+
+.footer-class {
+    background-color: whitesmoke;
+    display: flex;
+    object-position: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-class:hover {
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+}
+

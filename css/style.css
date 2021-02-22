@@ -3,10 +3,13 @@
 }
 
 .header-class {
+    display: flex;
     color: black;
     text-align: center;
-    font-size: 3em;
+    font-size: 2em;
+    align-content: space-around;
 }
+
 .header-class:hover {
     opacity: 0.7;
     background-color: whitesmoke;
@@ -20,14 +23,17 @@
 .main-class {
     display: flex;
 }
+
 .summary-class {
-    padding-top: 56px;
+    font-weight: normal;
 }
 
 .page-content-class {
     padding-top: 10px;
     padding-bottom: 10px;
+    /*
     overflow-y: scroll;
+    */
 }
 
 .fixed-top-2 {
@@ -37,6 +43,7 @@
 .aside-class {
     display: flex;
     text-align: center;
+    padding-bottom: 60px;
 }
 
 .footer-class {
@@ -52,4 +59,3 @@
     background-color: whitesmoke;
     text-align: center;
 }
-

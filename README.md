@@ -1,2 +1,2 @@
 # harism.github.io
-> Static Webpage of Harish M Pillai
+> https://harishmurkal.github.io/harism/ -- Static Webpage of Harish M Pillai

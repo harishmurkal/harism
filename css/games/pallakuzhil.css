@@ -1,0 +1,202 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.player-name-class {
+    height: 2px;
+}
+/* ABSOLUTE POSITIONED ELEMENTS */
+
+.kuzhi-value-class {
+    height: 20px;
+    color: chartreuse;
+    font-size: 15px;
+}
+
+.game-inhand-class {
+    position: relative;
+    left: 7%;
+    transform: translateX(-50%);
+    background: none;
+    /* border: none; */
+    margin: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: none;
+    font-weight: 400;
+    transition: all 0.2s;
+  
+    /* background-color: white;
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(10px);*/
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
+    padding: 0.7rem 2.5rem;
+}
+
+.game-message-class {
+    position: relative;
+    left: 40%;
+    transform: translateX(-50%);
+    background: none;
+    /* border: none; */
+    margin: 10px;
+    font-family: inherit;
+    font-size: 1rem;
+    text-transform: uppercase;
+    cursor: none;
+    font-weight: 400;
+    transition: all 0.2s;
+  
+    /* background-color: white;
+    background-color: rgba(255, 255, 255, 0.6); */
+    backdrop-filter: blur(10px);
+  
+    padding: 0.7rem 2.5rem;
+  }
+
+.btn {
+    position: relative;
+    left: 20%;
+    /* transform: translateX(-50%); */
+    color: #444;
+    background: none;
+    /* border: none; */
+    margin: 10px;
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.2s;
+  
+    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+  
+    padding: 0.7rem 2.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn::first-letter {
+    font-size: 2rem;
+    display: inline-block;
+  }
+
+  .btn:active {
+    transform: translate(-50%, 3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn:focus {
+    outline: none;
+  }
+  
+.hidden {
+    display: none;
+}
+  
+.body-class {
+    display: flex;
+    background-color: rgba(155, 39, 39, 0.555);
+    /* border-style:solid; */
+    box-sizing: inherit;
+    flex-direction: column;
+    /* margin: 0;
+    padding: 0; */
+}
+
+.board-1-class {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height:fit-content;
+    padding-top: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.board-when-waiting-class {
+    cursor: pointer;
+}
+
+.grab-attention-class {
+    background-color: rgba(116, 207, 30, 1);
+}
+
+.board-when-active-class {
+    border-radius: 1rem;
+    background-color: rgba(116, 207, 30, 0.4);
+    backdrop-filter: blur(2px);
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.board-2-class {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    height: fit-content;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.game-message-class {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+}
+
+.kuzhi-class {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    height:fit-content;
+    width: fit-content;
+    background-color: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);  
+    border-radius: 1rem;
+    /* box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1); */
+}
+
+.kuzhi-class-active {
+    border: 2px solid rgb(61, 9, 9);
+}
+
+.kuzhi-class-selected {
+    border: 10px solid rgb(61, 9, 9);
+}
+
+/* .kuzhi-class:hover {
+    border: 10px solid rgb(61, 9, 9);
+} */
+
+img {
+    height: 16vh;
+    width: 10vw;
+    object-fit: fill;
+    border-radius: 6px;
+}
+
+.footer-class {
+    background-color: whitesmoke;
+    display: flex;
+    object-position: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.footer-class:hover {
+    color: black;
+    background-color: whitesmoke;
+    text-align: center;
+}

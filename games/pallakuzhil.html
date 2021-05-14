@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pallakuzhil</title>
+    <meta name="keywords" content="harism,games,Harish,harishmpillai,harishmurkal,resume,pallakuzhil,html">
+    <!-- Favicon -->
+    <link href="../img/favicon.ico" rel="shortcut icon"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/games/pallakuzhil.css">
+
+</head>
+<body>
+    <div class="container-fluid row">
+
+        <div class="navigation-class sticky-top">
+            <nav class="navbar navbar-expand-xxl navbar-light bg-light">
+                <!-- <canvas id="canvas" height="10" width="100"></canvas> -->
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hm-stuff" aria-controls="hm-stuff" aria-expanded="false" aria-label="Toggle navigation">
+                    <a class="navbar-toggler-icon navbar-brand"><img src="../img/seed-pic.png" class="img-fluid" alt="HM" srcset="" width="500px" height="500px"></a>
+                </button>
+                <a class="navbar-brand header-class jumbotran" href="#">Harish M Pillai</a>
+
+                <div class="collapse navbar-collapse" id="hm-stuff">              
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Resume</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="game-list-id" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Games
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="game-list-id">
+                                <li><a class="dropdown-item" href="./games/guess.html" target="_blank">Guess the Number!</a></li>
+                                <li><a class="dropdown-item" href="./games/pallakuzhil.html" target="_blank">Pallakuzhil</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">More here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="container-fluid body-class">
+            <div class="d-flex flex-row player-name-class"></div>
+            <div class="d-flex flex-row board-1-class player-0">             
+            </div>
+            <div class="d-flex flex-row board-controls">
+                <div class="game-inhand-class"></div>
+
+                <button class="btn btn-start-class">Start</button>
+                <button class="btn btn-collect-class hidden">Collect</button>
+                <div class="game-message-class">
+                    <div class="scores-display-class">SCORE: Player-0 = 35 Player-1 = 35</div>
+                    <div class="user-message-class">Yet to start the game!</div>
+                </div>
+            </div>
+            <div class="d-flex flex-row board-2-class player-1">
+            </div>
+        </div>
+
+        <div class="footer-class fixed-bottom">
+            <nav class="navbar footer-class navbar-expand-md navbar-light bg-light">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#hm-stuff-footer" aria-controls="hm-stuff-footer" aria-expanded="false" aria-label="Toggle navigation">
+                        <a class="navbar-toggler-icon navbar-brand"><img src="../img/favicon.ico" class="img-fluid" alt="HM" srcset="" width="500px" height="500px"></a>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="hm-stuff-footer">              
+    
+                        <ul class="navbar-nav footer-class">
+                            <li class="nav-item">
+                                <a class="nav-link" href="mailto:harishmurkal@gmail.com" target="_blank">📧</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="tel:+91-9XX01XXXXX" target="_blank">📱</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://github.com/harishmurkal/" target="_blank">github</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.facebook.com/harish.m.pillai" target="_blank">facebook</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+    </div>
+
+    <script src="../js/games/pallakuzhil.js"></script>
+</body>
+</html>
